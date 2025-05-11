@@ -277,8 +277,7 @@ def load_player_data(cpm):
                     ),
                 )
             )
-        else:
-      
+    
 
 
 def load_key_data(cpm):
