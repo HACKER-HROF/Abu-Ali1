@@ -244,6 +244,15 @@ def banner(console):
         )
     )
 
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter(
+                "─════════════════════════════[ تﻮﻤﻟا فﻭﺮﺣ ]════════════════════════════─"
+            ),
+        )
+    )
+
 
 def load_player_data(cpm):
     response = cpm.get_player_data()
@@ -268,7 +277,19 @@ def load_player_data(cpm):
                     ),
                 )
             )
-    
+        else:
+            print(
+                Colorate.Horizontal(
+                    Colors.blue_to_red,
+                    "! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !",
+                )
+            )
+    else:
+        print(
+            Colorate.Horizontal(
+                Colors.blue_to_red, "! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !"
+            )
+        )
 
 
 def load_key_data(cpm):
@@ -279,7 +300,7 @@ def load_key_data(cpm):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─══════════════════════[ 𝖠𝖢𝖢𝖤𝖲𝖲 𝖪𝖤𝖸 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]══════════════════════─"
+                "─══════════════════════[ تﻮﻤﻟا فﻭﺮﺣ ]══════════════════════─"
             ),
         )
     )
@@ -288,7 +309,7 @@ def load_key_data(cpm):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                f'Telegram ID: {data.get("telegram_id")} <> Balance: {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
+                f' if not data.get("is_unlimited") else "Unlimited")}'
             ),
         )
     )
@@ -314,7 +335,7 @@ def load_client_details():
     print(
         Colorate.Horizontal(
             Colors.blue_to_red,
-            Center.XCenter("─═════════════════════[ 𝖫𝖮𝖢𝖠𝖳𝖨𝖮𝖭 ]═════════════════════─"),
+            Center.XCenter("─═════════════════════[ تﻮﻤﻟا فﻭﺮﺣ ]═════════════════════─"),
         )
     )
     print(
