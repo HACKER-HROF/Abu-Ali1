@@ -248,10 +248,125 @@ def banner(console):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─════════════════════════════[ تﻮﻤﻟا فﻭﺮﺣ  ]════════════════════════════─"
+                "─════════════════════════════[ 𝖯𝖫𝖠𝖸𝖤𝖱 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]════════════════════════════─"
             ),
         )
     )
+
+
+def load_player_data(cpm):
+    response = cpm.get_player_data()
+    if response.get("ok"):
+        data = response.get("data")
+        if (
+            isinstance(data, dict)
+            and "floats" in data
+            and "localID" in data
+            and "money" in data
+            and "coin" in data
+        ):
+            name = data.get("Name", "UNDEFINED")
+            local_id = data.get("localID")
+            money = data.get("money")
+            coin = data.get("coin")
+            print(
+                Colorate.Horizontal(
+                    Colors.blue_to_red,
+                    Center.XCenter(
+                        f"Name: {name} <> LocalID: {local_id} <> Money: {money} <> Coins: {coin}"
+                    ),
+                )
+            )
+        else:
+            print(
+                Colorate.Horizontal(
+                    Colors.blue_to_red,
+                    "! ALERT: new accounts must be signed-in to the game at least once !",
+                )
+            )
+    else:
+        print(
+            Colorate.Horizontal(
+                Colors.blue_to_red, "! ALERT: login seems not properly set !"
+            )
+        )
+
+
+def load_key_data(cpm):
+
+    data = cpm.get_key_data()
+
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter(
+                "─══════════════════════[ 𝖠𝖢𝖢𝖤𝖲𝖲 𝖪𝖤𝖸 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]══════════════════════─"
+            ),
+        )
+    )
+
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter(
+                f'Access Key: {data.get("access_key")} <> Telegram ID: {data.get("telegram_id")} <> Balance: {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
+            ),
+        )
+    )
+
+
+def prompt_valid_value(content, tag, password=False):
+    while True:
+        value = Prompt.ask(content, password=password)
+        if not value or value.isspace():
+            print(
+                Colorate.Horizontal(
+                    Colors.blue_to_red,
+                    f"{tag} CANNOT BE EMPTY OR JUST SPACES, PLEASE TRY AGAIN",
+                )
+            )
+        else:
+            return value
+
+
+def load_client_details():
+    response = requests.get("http://ip-api.com/json")
+    data = response.json()
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter("─═════════════════════[ 𝖫𝖮𝖢𝖠𝖳𝖨𝖮𝖭 ]═════════════════════─"),
+        )
+    )
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter(
+                f'Country: {data.get("country")} <> Region: {data.get("regionName")} <> City: {data.get("city")}'
+            ),
+        )
+    )
+
+
+def interpolate_color(start_color, end_color, fraction):
+    start_rgb = tuple(int(start_color[i : i + 2], 16) for i in (1, 3, 5))
+    end_rgb = tuple(int(end_color[i : i + 2], 16) for i in (1, 3, 5))
+    interpolated_rgb = tuple(
+        int(start + fraction * (end - start)) for start, end in zip(start_rgb, end_rgb)
+    )
+    return "{:02x}{:02x}{:02x}".format(*interpolated_rgb)
+
+
+def rainbow_gradient_string(customer_name):
+    modified_string = ""
+    num_chars = len(customer_name)
+    start_color = "{:06x}".format(random.randint(0, 0xFFFFFF))
+    end_color = "{:06x}".format(random.randint(0, 0xFFFFFF))
+    for i, char in enumerate(customer_name):
+        fraction = i / max(num_chars - 1, 1)
+        interpolated_color = interpolate_color(start_color, end_color, fraction)
+        modified_string += f"[{interpolated_color}]{char}"
+    return modified_string
 
 
 if __name__ == "__main__":
@@ -259,7 +374,40 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     while True:
         banner(console)
-
+        acc_email = prompt_valid_value("[?] ACCOUNT EMAIL", "Email", password=False)
+        acc_password = prompt_valid_value(
+            "[?] ACCOUNT PASSWORD", "Password", password=False
+        )
+        acc_access_key = prompt_valid_value(
+            "[?] ACCESS KEY", "Access Key", password=False
+        )
+        console.print("[%] TRYING TO LOGIN: ", end=None)
+        cpm = CPMHROF(acc_access_key)
+        login_response = cpm.login(acc_email, acc_password)
+        if login_response != 0:
+            if login_response == 100:
+                print(Colorate.Horizontal(Colors.blue_to_red, "ACCOUNT NOT FOUND"))
+                sleep(2)
+                continue
+            elif login_response == 101:
+                print(Colorate.Horizontal(Colors.blue_to_red, "WRONG PASSWORD"))
+                sleep(2)
+                continue
+            elif login_response == 103:
+                print(Colorate.Horizontal(Colors.blue_to_red, "INVALID ACCESS KEY"))
+                sleep(2)
+                continue
+            else:
+                print(Colorate.Horizontal(Colors.blue_to_red, "TRY AGAIN"))
+                print(
+                    Colorate.Horizontal(
+                        Colors.blue_to_red,
+                        "! NOTE: MAKE SURE YOU FILLED OUT THE FIELDS",
+                    )
+                )
+                sleep(2)
+                continue
+        else:
             print(Colorate.Horizontal(Colors.blue_to_red, "ﺢﺟﺎﻧ"))
             sleep(2)
         while True:
