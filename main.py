@@ -145,9 +145,9 @@ import datetime
 
 from CPMHROF import CPMHROF
 
-__CHANNEL_USERNAME__ = "@HACKER_HROF"
-__GROUP_USERNAME__ = "@HACKER_HROF"
-__BOT_RICK_NAME__ = "@HHIDD12BOT"
+__CHANNEL_USERNAME__ = "HACKER_HROF"
+__GROUP_USERNAME__ = "HACKER_HROF"
+__BOT_RICK_NAME__ = "HHIDD12BOT"
 _CHEATS_NAME = "👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑"
 
 
