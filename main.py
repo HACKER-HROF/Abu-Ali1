@@ -145,8 +145,8 @@ import datetime
 
 from CPMHROF import CPMHROF
 
-__CHANNEL_USERNAME__ = "@HACKER_HROF"
-__GROUP_USERNAME__ = "@HACKER_HROF"
+__CHANNEL_USERNAME__ = "HACKER_HROF"
+__GROUP_USERNAME__ = "HACKER_HROF"
 __BOT_RICK_NAME__ = "@HHIDD12BOT"
 _CHEATS_NAME = "👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑"
 
@@ -221,7 +221,7 @@ def banner(console):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─════════════════════════════[ تﻮﻤﻟا فﻭﺮﺣ  ]════════════════════════════─"
+                "─════════════════════════════[ 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑  ]════════════════════════════─"
             ),
         )
     )
