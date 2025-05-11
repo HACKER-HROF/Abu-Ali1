@@ -278,12 +278,7 @@ def load_player_data(cpm):
                 )
             )
         else:
-            
-        print(
-            Colorate.Horizontal(
-                Colors.blue_to_red, "! ALERT: login seems not properly set !"
-            )
-        )
+      
 
 
 def load_key_data(cpm):
