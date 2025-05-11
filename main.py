@@ -259,8 +259,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     while True:
         banner(console)
-
-                sleep(2)
+        
                 continue
         else:
             print(Colorate.Horizontal(Colors.blue_to_red, "ﺢﺟﺎﻧ"))
