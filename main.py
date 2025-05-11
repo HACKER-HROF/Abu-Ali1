@@ -248,7 +248,7 @@ def banner(console):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─════════════════════════════[ 𝖯𝖫𝖠𝖸𝖤𝖱 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]════════════════════════════─"
+                "─════════════════════════════[ 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑  ]════════════════════════════─"
             ),
         )
     )
@@ -278,13 +278,7 @@ def load_player_data(cpm):
                 )
             )
         else:
-            print(
-                Colorate.Horizontal(
-                    Colors.blue_to_red,
-                    "! ALERT: new accounts must be signed-in to the game at least once !",
-                )
-            )
-    else:
+
         print(
             Colorate.Horizontal(
                 Colors.blue_to_red, "! ALERT: login seems not properly set !"
