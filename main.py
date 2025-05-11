@@ -152,7 +152,7 @@ _CHEATS_NAME = "👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــ�
 
 
 def signal_handler(sig, frame):
-    print("\n Bye Bye...")
+    print("\n وداعا وداعا...")
     sys.exit(0)
 
 
@@ -187,13 +187,13 @@ def modificar_todos_los_autos(cpm, hp, hp_interno, nm, torque):
         if response:
             print(
                 Colorate.Horizontal(
-                    Colors.rainbow, "Todos los autos han sido modificados exitosamente."
+                    Colors.rainbow, "ﺡﺎﺠﻨﺑ ﺕﺍﺭﺎﻴﺴﻟﺍ ﻊﻴﻤﺟ ﻞﻳﺪﻌﺗ ﻢﺗ."
                 )
             )
         else:
-            print(Colorate.Horizontal(Colors.rainbow, "Error al modificar los autos."))
+            print(Colorate.Horizontal(Colors.rainbow, "ﺕﺍﺭﺎﻴﺴﻟﺍ ﻞﻳﺪﻌﺗ ﺪﻨﻋ ﺄﻄﺧ."))
     except Exception as e:
-        print(Colorate.Horizontal(Colors.rainbow, f"Error: {e}"))
+        print(Colorate.Horizontal(Colors.rainbow, f"خطأ: {e}"))
 
 
 def banner(console):
@@ -221,30 +221,7 @@ def banner(console):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─════════════════════════════[ IMPORTANT  ]════════════════════════════─"
-            ),
-        )
-    )
-
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter("𝐏𝐋𝐄𝐀𝐒𝐄 𝐋𝐎𝐆𝐎𝐔𝐓 𝐅𝐑𝐎𝐌 𝐂𝐏𝐌 𝐁𝐄𝐅𝐎𝐑𝐄 𝐔𝐒𝐈𝐍𝐆 𝐓𝐇𝐈𝐒 𝐓𝐎𝐎𝐋"),
-        )
-    )
-
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter("𝐒𝐇𝐀𝐑𝐈𝐍𝐆 𝐓𝐇𝐄 𝐀𝐂𝐂𝐄𝐒𝐒 𝐊𝐄𝐘 𝐈𝐒 𝐍𝐎𝐓 𝐀𝐋𝐋𝐎𝐖𝐄𝐃 𝐀𝐍𝐃 𝐖𝐈𝐋𝐋 𝐁𝐄 𝐁𝐋𝐎𝐂𝐊𝐄𝐃"),
-        )
-    )
-
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter(
-                f" 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL_USERNAME__} 𝐎𝐫 @{__GROUP_USERNAME__}"
+                "─════════════════════════════[ تﻮﻤﻟا فﻭﺮﺣ  ]════════════════════════════─"
             ),
         )
     )
@@ -253,7 +230,25 @@ def banner(console):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─════════════════════════════[ 𝖯𝖫𝖠𝖸𝖤𝖱 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]════════════════════════════─"
+            f" ﻙﻮﺘﻜﻴﺗ: @{__CHANNEL_USERNAME__}"    
+          ),
+        )
+    )
+
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter(
+                f" ﻡﺍﺮﺠﻴﻠﻴﺗ: @{__CHANNEL_USERNAME__}"
+            ),
+        )
+    )
+
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter(
+                "─════════════════════════════[ تفاصيل اللاعب ]════════════════════════════─"
             ),
         )
     )
@@ -292,7 +287,7 @@ def load_player_data(cpm):
     else:
         print(
             Colorate.Horizontal(
-                Colors.blue_to_red, "! ALERT: login seems not properly set !"
+                Colors.blue_to_red, "! تنبيه: يبدو أن تسجيل الدخول لم يتم ضبطه بشكل صحيح !"
             )
         )
 
@@ -300,38 +295,6 @@ def load_player_data(cpm):
 def load_key_data(cpm):
 
     data = cpm.get_key_data()
-
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter(
-                "─══════════════════════[ 𝖠𝖢𝖢𝖤𝖲𝖲 𝖪𝖤𝖸 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]══════════════════════─"
-            ),
-        )
-    )
-
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter(
-                f'Access Key: {data.get("access_key")} <> Telegram ID: {data.get("telegram_id")} <> Balance: {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
-            ),
-        )
-    )
-
-
-def prompt_valid_value(content, tag, password=False):
-    while True:
-        value = Prompt.ask(content, password=password)
-        if not value or value.isspace():
-            print(
-                Colorate.Horizontal(
-                    Colors.blue_to_red,
-                    f"{tag} CANNOT BE EMPTY OR JUST SPACES, PLEASE TRY AGAIN",
-                )
-            )
-        else:
-            return value
 
 
 def load_client_details():
@@ -413,7 +376,7 @@ if __name__ == "__main__":
                 sleep(2)
                 continue
         else:
-            print(Colorate.Horizontal(Colors.blue_to_red, "SUCCESSFUL"))
+            print(Colorate.Horizontal(Colors.blue_to_red, "ﺢﺟﺎﻧ"))
             sleep(2)
         while True:
             banner(console)
@@ -509,7 +472,7 @@ if __name__ == "__main__":
 
             print(
                 Colorate.Horizontal(
-                    Colors.blue_to_red, Center.XCenter(Box.DoubleCube(" ➩{0}: Exit"))
+                    Colors.blue_to_red, Center.XCenter(Box.DoubleCube(" ➩{0}: ﺝﻭﺮﺧ"))
                 )
             )
 
@@ -527,7 +490,7 @@ if __name__ == "__main__":
             )
 
             if service == 0:  # Exit
-                console.print("[bold white] Thank You for using my tool[/bold white]")
+                console.print("[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]")
             elif service == 1:  # Increase Money
                 console.print(
                     "[bold blue][bold white][?][/bold white] Insert how much money do you want[/bold blue]"
@@ -536,16 +499,16 @@ if __name__ == "__main__":
                 console.print("[%] Saving your data: ", end=None)
                 if amount > 0 and amount <= 500000000:
                     if cpm.set_player_money(amount):
-                        console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                        console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                         console.print(
                             "[bold green]======================================[/bold green]"
                         )
                         answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                         )
                         if answ == "y":
                             console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                             )
                         else:
                             continue
@@ -569,16 +532,16 @@ if __name__ == "__main__":
                 print("[ % ] Saving your data: ", end="")
                 if amount > 0 and amount <= 500000:
                     if cpm.set_player_coins(amount):
-                        console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                        console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                         console.print(
                             "[bold green]======================================[/bold green]"
                         )
                         answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                         )
                         if answ == "y":
                             console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                             )
                         else:
                             continue
@@ -606,16 +569,16 @@ if __name__ == "__main__":
                 sleep(2)
                 console.print("[%] Giving you a King Rank: ", end=None)
                 if cpm.set_player_rank():
-                    console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                    console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                     console.print(
                         "[bold blue] '======================================[/bold blue]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -635,16 +598,16 @@ if __name__ == "__main__":
                     and (" " in new_id) == False
                 ):
                     if cpm.set_player_localid(new_id.upper()):
-                        console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                        console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                         console.print(
                             "[bold blue] '======================================[/bold blue]"
                         )
                         answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                         )
                         if answ == "y":
                             console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                             )
                         else:
                             continue
@@ -664,16 +627,16 @@ if __name__ == "__main__":
                 console.print("[%] Saving your data: ", end=None)
                 if len(new_name) >= 0 and len(new_name) <= 999999999:
                     if cpm.set_player_name(new_name):
-                        console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                        console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                         console.print(
                             "[bold blue] '======================================[/bold blue]"
                         )
                         answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                         )
                         if answ == "y":
                             console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                             )
                         else:
                             continue
@@ -697,16 +660,16 @@ if __name__ == "__main__":
                 console.print("[%] Saving your data: ", end=None)
                 if len(new_name) >= 0 and len(new_name) <= 999999999:
                     if cpm.set_player_name(rainbow_gradient_string(new_name)):
-                        console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                        console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                         console.print(
                             "[bold blue] '======================================[/bold blue]"
                         )
                         answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                         )
                         if answ == "y":
                             console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                             )
                         else:
                             continue
@@ -725,16 +688,16 @@ if __name__ == "__main__":
             elif service == 7:  # Number Plates
                 console.print("[%] Giving you a Number Plates: ", end=None)
                 if cpm.set_player_plates():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -754,7 +717,7 @@ if __name__ == "__main__":
                 )
                 if answ == "y":
                     cpm.delete()
-                    console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                    console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                     console.print(
                         "[bold blue] '======================================[/bold blue]"
                     )
@@ -774,7 +737,7 @@ if __name__ == "__main__":
                 console.print("[%] Creating new Account: ", end=None)
                 status = cpm.register(acc2_email, acc2_password)
                 if status == 0:
-                    console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                    console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                     console.print(
                         "[bold blue] '======================================[/bold blue]"
                     )
@@ -801,16 +764,16 @@ if __name__ == "__main__":
             elif service == 10:  # Delete Friends
                 console.print("[%] Deleting your Friends: ", end=None)
                 if cpm.delete_player_friends():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -826,16 +789,16 @@ if __name__ == "__main__":
                 )
                 console.print("[%] Unlocking All Lamborghinis: ", end=None)
                 if cpm.unlock_all_lamborghinis():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -847,16 +810,16 @@ if __name__ == "__main__":
             elif service == 12:  # Unlock All Cars
                 console.print("[%] Unlocking All Cars: ", end=None)
                 if cpm.unlock_all_cars():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -868,16 +831,16 @@ if __name__ == "__main__":
             elif service == 13:  # Unlock All Cars Siren
                 console.print("[%] Unlocking All Cars Siren: ", end=None)
                 if cpm.unlock_all_cars_siren():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -889,16 +852,16 @@ if __name__ == "__main__":
             elif service == 14:  # Unlock w16 Engine
                 console.print("[%] Unlocking w16 Engine: ", end=None)
                 if cpm.unlock_w16():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -910,16 +873,16 @@ if __name__ == "__main__":
             elif service == 15:  # Unlock All Horns
                 console.print("[%] Unlocking All Horns: ", end=None)
                 if cpm.unlock_horns():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -931,16 +894,16 @@ if __name__ == "__main__":
             elif service == 16:  # Disable Engine Damage
                 console.print("[%] Unlocking Disable Damage: ", end=None)
                 if cpm.disable_engine_damage():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -952,16 +915,16 @@ if __name__ == "__main__":
             elif service == 17:  # Unlimited Fuel
                 console.print("[%] Unlocking Unlimited Fuel: ", end=None)
                 if cpm.unlimited_fuel():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -973,16 +936,16 @@ if __name__ == "__main__":
             elif service == 18:  # Unlock House 3
                 console.print("[%] Unlocking House 3: ", end=None)
                 if cpm.unlock_houses():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -994,16 +957,16 @@ if __name__ == "__main__":
             elif service == 19:  # Unlock Smoke
                 console.print("[%] Unlocking Smoke: ", end=None)
                 if cpm.unlock_smoke():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1015,16 +978,16 @@ if __name__ == "__main__":
             elif service == 20:  # Unlock Smoke
                 console.print("[%] Unlocking Wheels: ", end=None)
                 if cpm.unlock_wheels():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1036,16 +999,16 @@ if __name__ == "__main__":
             elif service == 21:  # Unlock Smoke
                 console.print("[%] Unlocking Animations: ", end=None)
                 if cpm.unlock_animations():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1057,16 +1020,16 @@ if __name__ == "__main__":
             elif service == 22:  # Unlock Smoke
                 console.print("[%] Unlocking Equipaments Male: ", end=None)
                 if cpm.unlock_equipments_male():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1078,16 +1041,16 @@ if __name__ == "__main__":
             elif service == 23:  # Unlock Smoke
                 console.print("[%] Unlocking Equipaments Female: ", end=None)
                 if cpm.unlock_equipments_female():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1108,16 +1071,16 @@ if __name__ == "__main__":
                     <= 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
                 ):
                     if cpm.set_player_wins(amount):
-                        console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                        console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                         console.print(
                             "[bold blue] '======================================[/bold blue]"
                         )
                         answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                         )
                         if answ == "y":
                             console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                             )
                         else:
                             continue
@@ -1145,16 +1108,16 @@ if __name__ == "__main__":
                     <= 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
                 ):
                     if cpm.set_player_loses(amount):
-                        console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                        console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                         console.print(
                             "[bold blue] '======================================[/bold blue]"
                         )
                         answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                         )
                         if answ == "y":
                             console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                             )
                         else:
                             continue
@@ -1184,16 +1147,117 @@ if __name__ == "__main__":
                 )
                 console.print("[%] Cloning your account: ", end=None)
                 if cpm.account_clone(to_email, to_password):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
+                        )
+                    else:
+                    continue
+            elif service == 24:  # Change Races Wins
+                console.print(
+                    "[bold blue] '[!] Insert how much races you win[/bold blue]"
+                )
+                amount = IntPrompt.ask("[?] Amount")
+                console.print("[%] Changing your data: ", end=None)
+                if (
+                    amount > 0
+                    and amount
+                    <= 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+                ):
+                    if cpm.set_player_wins(amount):
+                        console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
+                        console.print(
+                            "[bold blue] '======================================[/bold blue]"
+                        )
+                        answ = Prompt.ask(
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
+                        )
+                        if answ == "y":
+                            console.print(
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
+                            )
+                        else:
+                            continue
+                    else:
+                        console.print("[bold red]FAILED[/bold red]")
+                        console.print("[bold red]Please Try Again[/bold red]")
+                        sleep(2)
+                        continue
+                else:
+                    console.print("[bold red]FAILED[/bold red]")
+                    console.print(
+                        "[bold blue] '[!] Please use valid values[/bold blue]"
+                    )
+                    sleep(2)
+                    continue
+            elif service == 25:  # Change Races Loses
+                console.print(
+                    "[bold blue] '[!] Insert how much races you lose[/bold blue]"
+                )
+                amount = IntPrompt.ask("[?] Amount")
+                console.print("[%] Changing your data: ", end=None)
+                if (
+                    amount > 0
+                    and amount
+                    <= 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+                ):
+                    if cpm.set_player_loses(amount):
+                        console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
+                        console.print(
+                            "[bold blue] '======================================[/bold blue]"
+                        )
+                        answ = Prompt.ask(
+                            "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
+                        )
+                        if answ == "y":
+                            console.print(
+                                "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
+                            )
+                        else:
+                            continue
+                    else:
+                        console.print("[bold red]FAILED[/bold red]")
+                        console.print(
+                            "[bold blue] '[!] Please use valid values[/bold blue]"
+                        )
+                        sleep(2)
+                        continue
+                else:
+                    console.print("[bold red]FAILED[/bold red]")
+                    console.print(
+                        "[bold blue] '[!] Please use valid values[/bold blue]"
+                    )
+                    sleep(2)
+                    continue
+            elif service == 26:  # Clone Account
+                console.print(
+                    "[bold blue] '[!] Please Enter Account Detalis[/bold blue]"
+                )
+                to_email = prompt_valid_value(
+                    "[?] Account Email", "Email", password=False
+                )
+                to_password = prompt_valid_value(
+                    "[?] Account Password", "Password", password=False
+                )
+                console.print("[%] Cloning your account: ", end=None)
+                if cpm.account_clone(to_email, to_password):
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
+                    console.print(
+                        "[bold green]======================================[/bold green]"
+                    )
+                    answ = Prompt.ask(
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
+                    )
+                    if answ == "y":
+                        console.print(
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1221,11 +1285,11 @@ if __name__ == "__main__":
                     console.print("[bold green]SUCCESFUL (✔)[/bold green]")
                     console.print("================================")
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1245,15 +1309,15 @@ if __name__ == "__main__":
                 )
                 console.print("[red][%] HACKING CAR ANGLE[/red]: ", end=None)
                 if cpm.max_max1(car_id, custom):
-                    console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                    console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                     answ = Prompt.ask(
-                        "[red][?] DO YOU WANT TO EXIT[/red] ?",
+                        "[red][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/red] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1269,15 +1333,15 @@ if __name__ == "__main__":
                 custom = IntPrompt.ask("[pink][?]﻿ENTER PERCENTAGE TIRES U WANT[/pink]")
                 console.print("[red][%] Setting Percentage [/red]: ", end=None)
                 if cpm.max_max2(car_id, custom):
-                    console.print("[bold blue] 'SUCCESSFUL[/bold blue]")
+                    console.print("[bold blue] 'ﺢﺟﺎﻧ[/bold blue]")
                     answ = Prompt.ask(
-                        "[bold green][?] DO YOU WANT TO EXIT[/bold green] ?",
+                        "[bold green][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold green] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1297,15 +1361,15 @@ if __name__ == "__main__":
                     "[bold red][%] Setting Percentage [/bold red]: ", end=None
                 )
                 if cpm.millage_car(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1321,15 +1385,15 @@ if __name__ == "__main__":
                 custom = IntPrompt.ask("[bold blue][?]﻿ENTER BRAKE U WANT[/bold blue]")
                 console.print("[bold red][%] Setting BRAKE [/bold red]: ", end=None)
                 if cpm.brake_car(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1345,15 +1409,15 @@ if __name__ == "__main__":
                     "[bold red][%] Removing Rear Bumper [/bold red]: ", end=None
                 )
                 if cpm.rear_bumper(car_id):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1369,15 +1433,15 @@ if __name__ == "__main__":
                     "[bold red][%] Removing Front Bumper [/bold red]: ", end=None
                 )
                 if cpm.front_bumper(car_id):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1395,15 +1459,15 @@ if __name__ == "__main__":
                     f"[bold red][%] Setting float key... [/bold red]", end=None
                 )
                 if cpm.testin(custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1419,15 +1483,15 @@ if __name__ == "__main__":
                 )
                 console.print("[bold red][%] Changing Password [/bold red]: ", end=None)
                 if cpm.change_password(new_password):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white]Thank You for using my tool[/bold white]"
+                            "[bold white]ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1443,15 +1507,15 @@ if __name__ == "__main__":
                 custom = IntPrompt.ask("[bold blue][?]ENTER NEW SPOILER ID[/bold blue]")
                 console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
                 if cpm.telmunnongodz(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1467,15 +1531,15 @@ if __name__ == "__main__":
                 custom = IntPrompt.ask("[bold blue][?]INSERT BODYKIT ID[/bold blue]")
                 console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
                 if cpm.telmunnongonz(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1491,15 +1555,15 @@ if __name__ == "__main__":
                 custom = IntPrompt.ask("[bold blue][?]INSERT VALUE[/bold blue]")
                 console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
                 if cpm.incline(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1515,15 +1579,15 @@ if __name__ == "__main__":
                 )
                 console.print("[bold red][%] Changing Email [/bold red]: ", end=None)
                 if cpm.change_email(new_email):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
+                        "[bold][?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ[/bold] ?",
                         choices=["y", "n"],
                         default="n",
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white]Thank You for using my tool[/bold white]"
+                            "[bold white]ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         break
@@ -1534,16 +1598,16 @@ if __name__ == "__main__":
             elif service == 38:  # SHITTIN
                 console.print("[%] Unlocking Premium Wheels..: ", end=None)
                 if cpm.shittin():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1559,16 +1623,16 @@ if __name__ == "__main__":
                 )
                 console.print("[%] Unlocking Toyota Crown: ", end=None)
                 if cpm.unlock_crown():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1580,16 +1644,16 @@ if __name__ == "__main__":
             elif service == 40:  # Unlock Hat
                 console.print("[%] Unlocking Clan Hat: ", end=None)
                 if cpm.unlock_hat_m():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1601,16 +1665,16 @@ if __name__ == "__main__":
             elif service == 41:  # remove head male
                 console.print("[%] Removing Male head: ", end=None)
                 if cpm.rmhm():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1622,16 +1686,16 @@ if __name__ == "__main__":
             elif service == 42:  # remove head female
                 console.print("[%] Removing Female Head: ", end=None)
                 if cpm.rmhfm():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1643,16 +1707,16 @@ if __name__ == "__main__":
             elif service == 43:  # Unlock TOPM
                 console.print("[%] Unlocking Clan clothes Top 1: ", end=None)
                 if cpm.unlock_topm():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1664,16 +1728,16 @@ if __name__ == "__main__":
             elif service == 44:  # Unlock TOPMz
                 console.print("[%] Unlocking Clan clothes Top 1: ", end=None)
                 if cpm.unlock_topmz():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1685,16 +1749,16 @@ if __name__ == "__main__":
             elif service == 46:  # Unlock TOPF
                 console.print("[%] Unlocking Clan clothes Top: ", end=None)
                 if cpm.unlock_topf():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1706,16 +1770,16 @@ if __name__ == "__main__":
             elif service == 47:  # Unlock TOPFZ
                 console.print("[%] Unlocking Clan clothes Top 1: ", end=None)
                 if cpm.unlock_topfz():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1727,16 +1791,16 @@ if __name__ == "__main__":
             elif service == 48:  # Unlock Mercedes Cls
                 console.print("[%] Unlocking Mercedes Cls: ", end=None)
                 if cpm.unlock_cls():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]ﺢﺟﺎﻧ (✔)[/bold green]")
                     console.print(
                         "[bold green]======================================[/bold green]"
                     )
                     answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
+                        "[?] ؟ﺝﻭﺮﺨﻟﺍ ﺪﻳﺮﺗ ﻞﻫ ?", choices=["y", "n"], default="n"
                     )
                     if answ == "y":
                         console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
+                            "[bold white] ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ[/bold white]"
                         )
                     else:
                         continue
@@ -1746,22 +1810,22 @@ if __name__ == "__main__":
                     sleep(2)
                     continue
             elif service == 49:  # Modificar todos los autos
-                console.print("[bold]ENTER DETAILS TO MODIFY ALL CARS![/bold]")
-                new_hp = IntPrompt.ask("[bold][?] New HP entry[/bold]")
-                new_inner_hp = IntPrompt.ask("[bold][?] New internal HP input[/bold]")
-                new_nm = IntPrompt.ask("[bold][?] New entry NM[/bold]")
-                new_torque = IntPrompt.ask("[bold][?] Enter new torque[/bold]")
+                console.print("[bold]ﺕﺍﺭﺎﻴﺴﻟﺍ ﻊﻴﻤﺟ ﻞﻳﺪﻌﺘﻟ ﻞﻴﺻﺎﻔﺘﻟﺍ ﻞﺧﺩﺃ![/bold]")
+                new_hp = IntPrompt.ask("[bold][?] PH ﺔﻛﺮﺸﻟ ﺪﻳﺪﺟ ﻝﻮﺧﺩ[/bold]")
+                new_inner_hp = IntPrompt.ask("[bold][?] ﺪﻳﺪﺟ ﻲﻠﺧﺍﺩ PH ﻞﺧﺪﻣ[/bold]")
+                new_nm = IntPrompt.ask("[bold][?] MN ﺪﻳﺪﺟ ﻝﻮﺧﺩ[/bold]")
+                new_torque = IntPrompt.ask("[bold][?] ﺪﻳﺪﺠﻟﺍ ﻥﺍﺭﻭﺪﻟﺍ ﻡﺰﻋ ﻞﺧﺩﺃ[/bold]")
                 console.print(
-                    "[bold red][%] Modifying all cars [/bold red]: ", end=None
+                    "[bold red][%] ﺕﺍﺭﺎﻴﺴﻟﺍ ﻊﻴﻤﺟ ﻞﻳﺪﻌﺗ [/bold red]: ", end=None
                 )
                 modificar_todos_los_autos(cpm, new_hp, new_inner_hp, new_nm, new_torque)
                 answ = Prompt.ask(
-                    "[bold][?]DO YOU WANT TO LEAVE?[/bold] ?",
+                    "[bold][?]ﻲﺗﺍﺩﺃ ﻡﺍﺪﺨﺘﺳﺍ ﻰﻠﻋ ﻚﻟ ﺍﺮﻜﺷ?[/bold] ?",
                     choices=["y", "n"],
                     default="n",
                 )
                 if answ == "y":
-                    console.print("thanks for using the tool")
+                    console.print("ﺓﺍﺩﻷﺍ ﻚﻣﺍﺪﺨﺘﺳﻻ ﺍﺮﻜﺷ")
                 else:
                     continue
             else:
