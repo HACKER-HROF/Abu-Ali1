@@ -278,13 +278,7 @@ def load_player_data(cpm):
                 )
             )
         else:
-            print(
-                Colorate.Horizontal(
-                    Colors.blue_to_red,
-                    "! ALERT: new accounts must be signed-in to the game at least once !",
-                )
-            )
-    else:
+            
         print(
             Colorate.Horizontal(
                 Colors.blue_to_red, "! ALERT: login seems not properly set !"
