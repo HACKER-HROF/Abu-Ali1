@@ -244,8 +244,14 @@ def banner(console):
         )
     )
 
-
-    return modified_string
+    print(
+        Colorate.Horizontal(
+            Colors.blue_to_red,
+            Center.XCenter(
+                "─════════════════════════════[ تﻮﻤﻟا فﻭﺮﺣ  ]════════════════════════════─"
+            ),
+        )
+    )
 
 
 if __name__ == "__main__":
