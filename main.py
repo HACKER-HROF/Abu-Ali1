@@ -260,13 +260,6 @@ if __name__ == "__main__":
     while True:
         banner(console)
 
-                print(Colorate.Horizontal(Colors.blue_to_red, "TRY AGAIN"))
-                print(
-                    Colorate.Horizontal(
-                        Colors.blue_to_red,
-                        "! NOTE: MAKE SURE YOU FILLED OUT THE FIELDS",
-                    )
-                )
                 sleep(2)
                 continue
         else:
