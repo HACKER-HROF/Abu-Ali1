@@ -281,13 +281,13 @@ def load_player_data(cpm):
             print(
                 Colorate.Horizontal(
                     Colors.blue_to_red,
-                    "            ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !",
+                    "                    ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !",
                 )
             )
     else:
         print(
             Colorate.Horizontal(
-                Colors.blue_to_red, "            ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !"
+                Colors.blue_to_red, "                   ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !"
             )
         )
 
@@ -305,15 +305,7 @@ def load_key_data(cpm):
         )
     )
 
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter(
-                f' : {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
-            ),
-        )
-    )
-
+    
 
 def prompt_valid_value(content, tag, password=False):
     while True:
