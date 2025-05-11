@@ -281,13 +281,13 @@ def load_player_data(cpm):
             print(
                 Colorate.Horizontal(
                     Colors.blue_to_red,
-                    "! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !",
+                    "            ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !",
                 )
             )
     else:
         print(
             Colorate.Horizontal(
-                Colors.blue_to_red, "! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !"
+                Colors.blue_to_red, "            ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !"
             )
         )
 
@@ -309,7 +309,7 @@ def load_key_data(cpm):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                f' Balance: {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
+                f' : {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
             ),
         )
     )
@@ -332,20 +332,7 @@ def prompt_valid_value(content, tag, password=False):
 def load_client_details():
     response = requests.get("http://ip-api.com/json")
     data = response.json()
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter("─═════════════════════[ تﻮﻤﻟا فﻭﺮﺣ ]═════════════════════─"),
-        )
-    )
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter(
-                f'Country: {data.get("country")} <> Region: {data.get("regionName")} <> City: {data.get("city")}'
-            ),
-        )
-    )
+    
 
 
 def interpolate_color(start_color, end_color, fraction):
