@@ -145,8 +145,8 @@ import datetime
 
 from CPMHROF import CPMHROF
 
-__CHANNEL_USERNAME__ = "HACKER_HROF"
-__GROUP_USERNAME__ = "HACKER_HROF"
+__CHANNEL_USERNAME__ = "@HACKER_HROF"
+__GROUP_USERNAME__ = "@HACKER_HROF"
 __BOT_RICK_NAME__ = "@HHIDD12BOT"
 _CHEATS_NAME = "👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑"
 
@@ -221,7 +221,7 @@ def banner(console):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─════════════════════════════[ 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑  ]════════════════════════════─"
+                "─════════════════════════════[ تﻮﻤﻟا فﻭﺮﺣ  ]════════════════════════════─"
             ),
         )
     )
@@ -248,7 +248,7 @@ def banner(console):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                "─════════════════════════════[ 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑  ]════════════════════════════─"
+                "─════════════════════════════[ 𝖯𝖫𝖠𝖸𝖤𝖱 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]════════════════════════════─"
             ),
         )
     )
@@ -278,7 +278,13 @@ def load_player_data(cpm):
                 )
             )
         else:
-
+            print(
+                Colorate.Horizontal(
+                    Colors.blue_to_red,
+                    "! ALERT: new accounts must be signed-in to the game at least once !",
+                )
+            )
+    else:
         print(
             Colorate.Horizontal(
                 Colors.blue_to_red, "! ALERT: login seems not properly set !"
