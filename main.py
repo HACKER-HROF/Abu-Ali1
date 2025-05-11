@@ -281,13 +281,13 @@ def load_player_data(cpm):
             print(
                 Colorate.Horizontal(
                     Colors.blue_to_red,
-                    "                          ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !",
+                    "                            ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !",
                 )
             )
     else:
         print(
             Colorate.Horizontal(
-                Colors.blue_to_red, "                         ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !"
+                Colors.blue_to_red, "                           ! 👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑 !"
             )
         )
 
