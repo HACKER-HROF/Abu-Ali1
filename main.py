@@ -260,8 +260,7 @@ if __name__ == "__main__":
     while True:
         banner(console)
         
-                continue
-        else:
+                console
             print(Colorate.Horizontal(Colors.blue_to_red, "ﺢﺟﺎﻧ"))
             sleep(2)
         while True:
