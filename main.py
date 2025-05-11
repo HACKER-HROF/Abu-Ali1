@@ -259,30 +259,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     while True:
         banner(console)
-        acc_email = prompt_valid_value("[?] ACCOUNT EMAIL", "Email", password=False)
-        acc_password = prompt_valid_value(
-            "[?] ACCOUNT PASSWORD", "Password", password=False
-        )
-        acc_access_key = prompt_valid_value(
-            "[?] ACCESS KEY", "Access Key", password=False
-        )
-        console.print("[%] TRYING TO LOGIN: ", end=None)
-        cpm = CPMHROF(acc_access_key)
-        login_response = cpm.login(acc_email, acc_password)
-        if login_response != 0:
-            if login_response == 100:
-                print(Colorate.Horizontal(Colors.blue_to_red, "ACCOUNT NOT FOUND"))
-                sleep(2)
-                continue
-            elif login_response == 101:
-                print(Colorate.Horizontal(Colors.blue_to_red, "WRONG PASSWORD"))
-                sleep(2)
-                continue
-            elif login_response == 103:
-                print(Colorate.Horizontal(Colors.blue_to_red, "INVALID ACCESS KEY"))
-                sleep(2)
-                continue
-            else:
+
                 print(Colorate.Horizontal(Colors.blue_to_red, "TRY AGAIN"))
                 print(
                     Colorate.Horizontal(
