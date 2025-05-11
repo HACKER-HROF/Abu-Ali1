@@ -244,15 +244,6 @@ def banner(console):
         )
     )
 
-    print(
-        Colorate.Horizontal(
-            Colors.blue_to_red,
-            Center.XCenter(
-                "─════════════════════════════[ 𝖯𝖫𝖠𝖸𝖤𝖱 𝖣𝖤𝖳𝖠𝖨𝖫𝖲 ]════════════════════════════─"
-            ),
-        )
-    )
-
 
 def load_player_data(cpm):
     response = cpm.get_player_data()
@@ -297,7 +288,7 @@ def load_key_data(cpm):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                f'Access Key: {data.get("access_key")} <> Telegram ID: {data.get("telegram_id")} <> Balance: {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
+                f'Telegram ID: {data.get("telegram_id")} <> Balance: {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
             ),
         )
     )
