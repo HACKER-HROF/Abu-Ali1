@@ -309,7 +309,7 @@ def load_key_data(cpm):
         Colorate.Horizontal(
             Colors.blue_to_red,
             Center.XCenter(
-                f' if not data.get("is_unlimited") else "Unlimited")}'
+                f' Balance: {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}'
             ),
         )
     )
