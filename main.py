@@ -114,17 +114,17 @@ banner = r"""
 
 
 pyAnime.Fade(
-    pyCenter.Center(banner), pyColors.red_to_BLUE, pyColorate.Vertical, enter=True
+    pyCenter.Center(banner), pyColors.red_to_blue, pyColorate.Vertical, enter=True
 )
 
 
 # pyAnime.Fade(pyCenter.Center(text), pyColors.purple_to_red, pyColorate.Vertical, enter=True)
-# print(pyColorate.Horizontal(pyColors.red_to_BLUE, pyCenter.XCenter(text)))
+# print(pyColorate.Horizontal(pyColors.red_to_blue, pyCenter.XCenter(text)))
 
 pySystem.Clear()
 
 # print("\n"*2    )
-# print(pyColorate.Horizontal(pyColors.red_to_BLUE, pyCenter.XCenter(text)))
+# print(pyColorate.Horizontal(pyColors.red_to_blue, pyCenter.XCenter(text)))
 # print("\n"*2)
 
 
