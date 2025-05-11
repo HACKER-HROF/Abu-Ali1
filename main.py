@@ -273,7 +273,7 @@ def load_player_data(cpm):
                 Colorate.Horizontal(
                     Colors.blue_to_red,
                     Center.XCenter(
-                        f"Name: {name} <> LocalID: {local_id} <> Money: {money} <> Coins: {coin}"
+                        f"ﻢﺳﺍ: {name} <> ﻲﻠﺤﻣ ﻑﺮﻌﻣ: {local_id} <> ﻝﺎﻣ: {money} <> ﺔﻴﻧﺪﻌﻣ ﺕﻼﻤﻋ: {coin}"
                     ),
                 )
             )
@@ -353,12 +353,12 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     while True:
         banner(console)
-        acc_email = prompt_valid_value("[?] ACCOUNT EMAIL", "Email", password=False)
+        acc_email = prompt_valid_value("[🎭] ﺏﺎﺴﺤﻠﻟ ﻲﻧﻭﺮﺘﻜﻟﻹﺍ ﺪﻳﺮﺒﻟﺍ", "Email", password=False)
         acc_password = prompt_valid_value(
-            "[?] ACCOUNT PASSWORD", "Password", password=False
+            "[🎭] ﺮﺴﻟﺍ ﺔﻤﻠﻛ", "Password", password=False
         )
         acc_access_key = prompt_valid_value(
-            "[?] ACCESS KEY", "Access Key", password=False
+            "[🎭] ﻝﻮﺻﻮﻟﺍ ﺡﺎﺘﻔﻣ", "Access Key", password=False
         )
         console.print("[%] TRYING TO LOGIN: ", end=None)
         cpm = CPMHROF(acc_access_key)
