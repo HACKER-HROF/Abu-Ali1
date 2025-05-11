@@ -10,7 +10,7 @@ import requests
 __ENDPOINT_URL__: str = "https://popstool.io/api"
 
 
-class CPMFlanker:
+class CPMHROF:
     def __init__(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key
