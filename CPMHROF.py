@@ -7,7 +7,7 @@ import urllib.parse
 import requests
 
 
-__ENDPOINT_URL__: str = "https://darkgray-wren-785588.hostingersite.com/api"
+__ENDPOINT_URL__: str = "https://telmunnshop.squareweb.app/api"
 
 
 class CPMHROF:
