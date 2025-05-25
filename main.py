@@ -279,6 +279,15 @@ def load_player_data(cpm):
             )
         else:
             print(
+        Colorate.Horizontal(
+            Colors.yellow_to_red,
+            Center.XCenter(
+                f'طﺎﻘﻧ: {(data.get("coins") if not data.get("is_unlimited") else "هﺩﻭﺪﺤﻣ ﺮﻴﻏ")}'
+            ),
+        )
+)
+else:
+            print(
                 Colorate.Horizontal(
                     Colors.blue_to_red,
                     "                               👑 ﺕﻮـــﻤــــﻟﺍ ﻑﻭﺮـــﺣ  ﻚــﻤــﻋ  👑  ",
